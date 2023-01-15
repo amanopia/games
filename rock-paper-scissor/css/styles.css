@@ -32,6 +32,10 @@ body {
     background: var(--color-bg);
 }
 
+.parent-container {
+    height: 100vh;
+    z-index: 4;
+}
 header > h1 {
     font-family: "Stalinist One", sans-serif;
     font-size: 1.5rem;
@@ -48,16 +52,18 @@ header {
 .nav-list {
     display: flex;
     flex-direction: row;
-    gap: 3rem;
+    /* gap: 3rem; */
     min-height:min-content;
 }
+/* transition property has been defined on each list item individually rather than the whole bar */
 .nav-list >li {
     transition: all 400ms ease;
     padding: 1.3rem;
 }
-
+/* had i given nav-list:hover then it would have applied on the whole navigation bar all at once*/
 .nav-list :nth-child(n):hover {
-    background: blue;
+    background: rgb(79, 79, 79);
+    cursor:pointer;
 }
 .container {
     display: grid;
@@ -70,4 +76,24 @@ h2 {
 
 button:hover {
     cursor: pointer;
+}
+
+.circle1 {
+    height: 5rem;
+    width: 5rem;
+    background: rgb(0, 0, 255);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+
+.circle2 {
+    height: 5rem;
+    width: 5rem;
+    background: rgb(255, 119, 0);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
 }

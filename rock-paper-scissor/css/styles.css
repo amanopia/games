@@ -11,17 +11,24 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
 :root {
     --color-bg: #000;
-    --color-text: #fff;
+    --color-text: #ffffff;
     --color-inactive: #999999;
-    ---color-active: var(--color-text);
+    --color-active: var(--color-text);
+    --color-link: #45d900;
+    --color-hover: #3a3a3a;
 }
 
 body {
     font-family: "Poppins";
     padding: 1.5rem;
-    color: #fff;
+    color: var(--color-text);
     background: var(--color-bg);
 }
 
@@ -29,6 +36,28 @@ header > h1 {
     font-family: "Stalinist One", sans-serif;
     font-size: 1.5rem;
     line-height: 0.9;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    min-height:min-content;
+}
+.nav-list >li {
+    transition: all 400ms ease;
+    padding: 1.3rem;
+}
+
+.nav-list :nth-child(n):hover {
+    background: blue;
 }
 .container {
     display: grid;
@@ -42,4 +71,3 @@ h2 {
 button:hover {
     cursor: pointer;
 }
-

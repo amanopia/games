@@ -17,7 +17,7 @@ a {
 }
 
 :root {
-    --color-bg: #000;
+    --color-bg: #595959;
     --color-text: #ffffff;
     --color-inactive: #999999;
     --color-active: var(--color-text);
@@ -27,14 +27,15 @@ a {
 
 body {
     font-family: "Poppins";
-    padding: 1.5rem;
     color: var(--color-text);
     background: var(--color-bg);
 }
 
 .parent-container {
+    padding: 1.5rem 1.5rem 0;
     height: 100vh;
-    z-index: 4;
+    width: 100vw;
+    position: relative;
 }
 header > h1 {
     font-family: "Stalinist One", sans-serif;
@@ -47,6 +48,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 1rem;
 }
 
 .nav-list {
@@ -56,7 +58,7 @@ header {
     min-height:min-content;
 }
 /* transition property has been defined on each list item individually rather than the whole bar */
-.nav-list >li {
+.nav-list >a {
     transition: all 400ms ease;
     padding: 1.3rem;
 }
@@ -70,6 +72,30 @@ header {
     grid-template-columns: repeat(2,1fr);
 }
 
+.result {
+   display: grid;
+   place-items: center;
+}
+
+.user, .computer {
+    height: 30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.user-image, .computer-image {
+    position: absolute;
+    height: 12rem;
+    top: 4rem;
+}
+.button {
+    padding: 1rem;
+    background: var(--color-inactive);
+    color: #fff;
+}
 h2 {
     font-weight: 400;
 }
@@ -78,7 +104,7 @@ button:hover {
     cursor: pointer;
 }
 
-.circle1 {
+/* .circle1 {
     height: 5rem;
     width: 5rem;
     background: rgb(0, 0, 255);
@@ -86,14 +112,26 @@ button:hover {
     position: absolute;
     top: 0;
     left: 50%;
-}
+    z-index: -3;
+} */
 
-.circle2 {
+/* .circle2 {
     height: 5rem;
     width: 5rem;
     background: rgb(255, 119, 0);
     border-radius: 50%;
     position: absolute;
-    bottom: 0;
     left: 50%;
+    z-index: -3;
+} */
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(3px);
+    z-index: -2;
 }
